@@ -1,0 +1,242 @@
+a,a:hover{
+  color:#333;
+  cursor:pointer;
+  text-decoration:none;
+}
+.img{
+  display: inline-block;
+  width:300px;
+  height: 200px;
+  box-sizing: border-box;
+  margin: 0 2.4px 5px 0;
+  border-radius: 10px;
+  border: solid 1px rgba(51, 51, 51, 0.8);
+}
+.description{
+  word-wrap: break-word;
+}
+
+#cat{
+  text-align: center;
+  /* margin-top: 100px; */
+}
+
+#algo{
+  background: url("algo.jpeg");
+  background-size: 100%;
+}
+
+#archi{
+  background: url("archi.jpeg");
+  background-size: 100%;
+}
+
+#dbms{
+  background: url("dbms.jpg");
+  background-size: 100%;
+}
+
+#ml{
+  background: url("ml.png");
+  background-size: 100%;
+}
+
+#networking{
+  background: url("networking.jpg");
+  background-size: 100%;
+}
+
+#soft{
+  background: url("soft.jpg");
+  background-size: 100%;
+}
+
+#travel{
+  background: url("travelling.jpg");
+  background-size: 100%;
+}
+
+#food{
+  background: url("food.jpg");
+  background-size: 100%;
+}
+
+#science{
+  background: url("science.png");
+  background-size: 100%;
+}
+
+#medical{
+  background: url("medical.jpg");
+  background-size: 100%;
+}
+
+#music{
+  background: url("music.jpg");
+  background-size: 100%;
+}
+#tech{
+  background: url("tech.jpg");
+  background-size: 100%;
+}
+
+#other{
+  background: url("Health-Lifestyle.png");
+  background-size: 100%;
+}
+
+#p{
+  width: 300px;
+  opacity: 0;
+  font-size:22px;
+  height:200px;
+  line-height: 200px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+.img:hover{
+  box-shadow: 0px 0px 20px rgba(51, 51, 51, 0.5);
+}
+
+.img:hover #p{
+  text-align: center;
+  display: inline-block;
+  color: white;
+  opacity: 0.9;
+}
+
+.mar1{
+  margin-top: 50px;
+}
+
+.mar{
+  margin-top: 100px;
+}
+
+.category{
+margin-top: 200px;
+}
+
+body.technical{
+   background: url("technical.jpeg");
+   background-size: cover;
+   margin-top: 100px;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+body.categories{
+  background: url("technical.jpeg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.other{
+  background: url("technical.jpeg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.music{
+  background: url("background3.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.medical{
+  background: url("medical4.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.science{
+  background: url("space.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.travel{
+  background: url("travel1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.food{
+  background: url("food1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.algo{
+  background: url("algo1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.arch{
+  background: url("arch2.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.dbms{
+  background: url("dbms1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.ml{
+  background: url("ml1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.net{
+  background: url("net1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.soft{
+  background: url("soft1.jpg");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.landing{
+  background: url("");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.comment{
+  background: url("");
+  background-size: cover;
+  margin-top: 100px;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+body.login{
+  margin-top: 100px;
+}
+body.register
+{
+  margin-top:100px;
+}
+.com
+{
+  background-color: grey;
+}

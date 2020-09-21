@@ -1,0 +1,40 @@
+<%- include("../../partials/header") -%>
+<body class="travel">
+  <div class="jumbotron  jumbotron-fluid">
+    <div class="ui huge header" style="text-align:center;">
+      Travel Blogs
+      <a style="margin-left:50px;" class="btn btn-primary btn" href="/categories/other/travel/new">Add New Post</a>
+    </div>
+  </div>
+  <div class="ui text container main">
+    <div class="ui top attached segment">
+      <div class="ui divided items">
+        <% blogs.forEach(function(blog){%>
+
+            <div class="item">
+              <div class="image">
+              <img src="<%= blog.image %>" alt="">
+              </div>
+              <div class="content">
+                <a class="header" href="/categories/other/travel/<%= blog._id %>"><%= blog.title %></a>
+                <div class="meta">
+                  <span><%= blog.created.toDateString() %></span>
+                </div>
+                <div class="description">
+                    <p><%= blog.body.substring(0,100) %> ...</p>
+                </div>
+                <div class="extra">
+                    <a class="ui floated inverted blue button" href="/categories/other/travel/<%= blog._id %>">
+                      Read More
+                      <i class="right chevron icon"></i>
+                    </a>
+                </div>
+              </div>
+            </div>
+        <% }) %>
+      </div>
+    </div>
+  </div>
+</body>
+
+<%- include("../../partials/footer") -%>

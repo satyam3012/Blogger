@@ -1,0 +1,29 @@
+<%- include("../../partials/header") -%>
+<body class="ml">
+  <div class="ui main text container segment">
+    <div class="ui huge header">
+      New Blog
+    </div>
+    <form class="ui form" action="/categories/technical/ml" method="post">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="blog[title]" placeholder="Title" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Image Url</label>
+        <input type="text" name="blog[image]" placeholder="Image Url" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Blog Category</label>
+        <input type="text" name="blog[category]" placeholder="Category" autocomplete="off">
+      </div>
+      <div class="field">
+        <label>Blog Content</label>
+        <textarea name="blog[body]"></textarea>
+      </div>
+      <button class="ui blue inverted big button" type="submit">Submit</button>
+    </form>
+  </div>
+</body>
+
+<%- include("../../partials/footer") -%>

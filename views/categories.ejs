@@ -1,0 +1,36 @@
+<%- include("partials/header") -%>
+<body class="categories">
+  <div class="container-fluid">
+
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 id="cat" class="display-4">Select a Category</h1>
+      </div>
+    </div>
+    <div class="container">
+      <div id="cat" class="row category">
+        <div class="col-md-6">
+          <a href="/categories/technical">
+            <div id="tech" class="img">
+              <div id="p">
+                Technical
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-6">
+          <a href="/categories/other">
+            <div id="other" class="img">
+              <div id="p">
+                Other
+              </div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</body>
+<%- include("partials/footer") -%>

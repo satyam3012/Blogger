@@ -1,0 +1,17 @@
+<%- include("../partials/header") -%>
+<body class="comment">
+  <div class="ui main text container segment">
+    <div class="ui huge header">
+      Reply to <p><%= blog.title %></p>
+    </div>
+    <form class="ui form" action="/categories/other/<%= blog.category %>/<%= blog._id %>/comments" method="post">
+      <div class="field">
+        <label>Text</label>
+        <input type="text" name="comment[text]" placeholder="Text" autocomplete="off">
+      </div>
+      <button class="btn btn-info" type="submit">Submit</button>
+      <a class="btn btn-success" href="/categories/other/<%=blog.category%>">Go back</a>
+    </form>
+  </div>
+</body>
+<%- include("../partials/footer") -%>

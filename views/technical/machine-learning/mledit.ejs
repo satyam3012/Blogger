@@ -1,0 +1,30 @@
+<%- include("../../partials/header") -%>
+<body class="ml">
+  <div class="ui main text container segment">
+    <div class="ui huge header">
+      Edit This Post
+    </div>
+    <form class="ui form" action="/categories/technical/ml/<%= blog._id %>?_method=PUT" method="post">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="blog[title]" value="<%= blog.title %>">
+      </div>
+      <div class="field">
+        <label>Image Url</label>
+        <input type="text" name="blog[image]" value="<%= blog.image %>">
+      </div>
+      <div class="field">
+        <label>Blog Category</label>
+        <input type="text" name="blog[category]" value="<%= blog.category %>">
+      </div>
+      <div class="field">
+        <label>Blog Content</label>
+        <textarea name="blog[body]"><%= blog.body %></textarea>
+      </div>
+      <button class="ui blue inverted big button" type="submit">Submit</button>
+    </form>
+
+  </div>
+</body>
+
+<%- include("../../partials/footer") -%>

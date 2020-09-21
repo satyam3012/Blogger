@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Blogger</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a href="/"><p class="navbar-brand"><i class="blogger b icon"></i>Blogger</p></a>
+      </div>
+        <ul class="nav navbar-nav navbar-right">
+          <li id="categories"><a href="/categories">Categories</a></li>
+          <% if(!currentUser){ %>
+            <li id="home"><a href="/login">Login</a></li>
+            <li id="categories"><a href="/register">Signup</a></li>
+         <% }else{ %>
+            <li><a href="#">Signed in as <%= currentUser.username %></a></li>
+            <li id="contact"><a href="/logout">Logout</a></li>
+        <% } %>
+        </ul>
+    </div>
+  </nav>
