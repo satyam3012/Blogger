@@ -41,7 +41,7 @@ app.use(function(req,res,next){
 app.use(indexRoutes);
 app.use(commentRoutes);
 app.use(postRoutes);
-
+app.set('port',process.env.PORT || 4000);
 app.listen(4000, function () {
   console.log("server running on port 4000");
 });
