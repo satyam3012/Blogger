@@ -12,6 +12,7 @@ const User=require("./models/user");
 const commentRoutes=require("./routes/comments");
 const indexRoutes=require("./routes/index");
 const postRoutes=require("./routes/postRoutes");
+const port=process.env.PORT || 3000;
 mongoose.connect("mongodb://localhost/Blogger", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -41,7 +42,6 @@ app.use(function(req,res,next){
 app.use(indexRoutes);
 app.use(commentRoutes);
 app.use(postRoutes);
-app.set('port',process.env.PORT || 4000);
-app.listen(4000, function () {
+app.listen(port, function () {
   console.log("server running on port 4000");
 });
