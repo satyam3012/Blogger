@@ -12,8 +12,10 @@ const User=require("./models/user");
 const commentRoutes=require("./routes/comments");
 const indexRoutes=require("./routes/index");
 const postRoutes=require("./routes/postRoutes");
-const port=process.env.PORT || 3000;
-mongoose.connect("mongodb://localhost/Blogger", {
+const port=process.env.PORT || 4000;
+var uristring=process.env.MONGOLAB_URI ||
+    process.env.MONGOHQ_URL || 'mongodb://localhost/Blogger';
+mongoose.connect(uristring, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
