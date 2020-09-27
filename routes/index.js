@@ -2,17 +2,15 @@ const express=require("express");
 const router=express.Router();
 const passport=require("passport");
 const User=require("../models/user");
-router.get("/", function (req, res) {
-    res.render("landing",{currentUser:req.user});
-  });
+const Blog=require("../models/blog");
 router.get("/categories", function (req, res) {
     res.render("categories");
   });
-  
+
 router.get("/categories/technical", function (req, res) {
     res.render("technical");
   });
-  
+
 router.get("/categories/other", function (req, res) {
     res.render("other");
   });

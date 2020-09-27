@@ -1,11 +1,51 @@
+const express=require("express");
+const router=express.Router();
+const Blog=require("../models/blog");
+router.get("/", function (req, res) {
+    // res.render("landing",{currentUser:req.user});
+    Blog.find({}, function (err, blogs)
+    {
+      if (err)
+      {
+        console.log(err);
+      } else
+      {
+        res.render("landing", { blogs: blogs,currentUser:req.user });
+      }
+    });
+  });
+  //show route Algorithm
+  router.get("/:id", function (req, res)
+  {
+    Blog.findById(req.params.id).populate("comment").exec(function (err, foundBlog)
+    {
+      if (err)
+      {
+        res.redirect("/");
+      }
+      else
+      {
+        res.render("viewlan", { blog: foundBlog });
+      }
+    });
+  });
+  router.delete("/:id",isLoggedIn,function(req,res){
+    Blog.findByIdAndRemove(req.params.id,function(err){
+      if(err)
+      {
+        res.redirect("/");
+      }
+      else
+      {
+        res.redirect("/");
+      }
+    });
+  });
 //category wise routes:
 //Technical routes
 //Algorithm
 //REST Routes
 //{{{{{{{{{{{{
-const express=require("express");
-const router=express.Router();
-const Blog=require("../models/blog");
     router.get("/categories/technical/algorithms", function (req, res)
     {
       Blog.find({'category':"algorithms"}, function (err, blogs)
@@ -80,7 +120,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/technical/algorithms/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -169,7 +209,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/technical/architecture/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -183,9 +223,9 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
-    
-    
+
+
+
     //DBMS
     //REST Routes
     //{{{{{{{{{{{{
@@ -263,7 +303,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/technical/dbms/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -277,14 +317,14 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
+
+
     //}}}}}}}}}}}}
-    
+
     //Machine Learning
     //REST Routes
     //{{{{{{{{{{{{
@@ -360,7 +400,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/technical/ml/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -374,15 +414,15 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     //Computer Networking
     //REST Routes
     //{{{{{{{{{{{{
@@ -458,7 +498,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/technical/net/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -472,15 +512,15 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     //Software Engineering
     //REST Routes
     //{{{{{{{{{{{{
@@ -556,7 +596,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/technical/soft/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -570,17 +610,17 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     // ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-    
+
     //Other Blogs:::::::::::::
     //Travel
     //REST Routes
@@ -657,7 +697,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/other/travel/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -671,15 +711,15 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     //Food
     //REST Routes
     //{{{{{{{{{{{{
@@ -755,7 +795,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/other/food/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -769,15 +809,15 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     //Science
     //REST Routes
     //{{{{{{{{{{{{
@@ -853,7 +893,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/other/science/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -867,15 +907,15 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     //Medical Science
     //REST Routes
     //{{{{{{{{{{{{
@@ -951,7 +991,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/other/medical/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){
@@ -965,15 +1005,15 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // =======================================================
     //comments
     //========================================================
-    
-    
-    
+
+
+
     //}}}}}}}}}}}}
-    
+
     //Music
     //REST Routes
     //{{{{{{{{{{{{
@@ -1049,7 +1089,7 @@ const Blog=require("../models/blog");
         }
       });
     });
-    
+
     // Delete Blog
     router.delete("/categories/other/music/:id",isLoggedIn,function(req,res){
       Blog.findByIdAndRemove(req.params.id,function(err){

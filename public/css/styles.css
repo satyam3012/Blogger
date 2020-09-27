@@ -216,7 +216,7 @@ body.soft{
   background-attachment: fixed;
 }
 body.landing{
-  background: url("");
+  background: url("landing.jpg");
   background-size: cover;
   margin-top: 100px;
   background-repeat: no-repeat;
@@ -231,10 +231,18 @@ body.comment{
 }
 body.login{
   margin-top: 100px;
+  background-image: url('../images/bg-01.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 body.register
 {
   margin-top:100px;
+  background-image: url('../images/bg-01.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .com
 {

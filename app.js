@@ -13,12 +13,12 @@ const commentRoutes=require("./routes/comments");
 const indexRoutes=require("./routes/index");
 const postRoutes=require("./routes/postRoutes");
 const port=process.env.PORT || 4000;
-var uristring=process.env.MONGOLAB_URI ||
-    process.env.MONGOHQ_URL || 'mongodb://localhost/Blogger';
-mongoose.connect(uristring, {
+
+mongoose.connect("mongodb+srv://sudeep:jogers123@cluster0.bymm0.gcp.mongodb.net/blogitv1?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 //PASSPORT CONFIG
 app.use(require("express-session")({
   secret:"Once again",
